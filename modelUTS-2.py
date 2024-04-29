@@ -7,41 +7,41 @@ model = joblib.load('modelUTS.pkl')
 def main():
     st.title('Prediction Model of Churn and Not Churn')
 
-    credit_score = st.number_input(min_value=0, max_value=1000, value="min")
+    credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value="min")
     st.write('Your credit score number is ', credit_score)
     
-    geography = st.selectbox("Location", ("0:France", "1:Spain", "2:Germany"),
+    geography = st.selectbox('Geography', ("0:France", "1:Spain", "2:Germany"),
                              index=None, placeholder="Select geography area...",)
     st.write('Your area:', geography)
     
-    gender = st.radio("Your gender", ["***Female***", "***Male***"])
+    gender = st.radio('Gender', ["***Female***", "***Male***"])
     if gender == '***Female***':
         st.write('You are a female')
     else:
         st.write('You are a male')
     
-    age = st.number_input("Your age", value=None, placeholder="Your current age...")
+    age = st.number_input('Age', value=None, placeholder="Your current age...")
     st.write('You are', age, 'years old')
 
     tenure = st.slider('Tenure', min_value=0, max_value=10, value=1)
     
     balance = st.slider('Balance', min_value=0.0, max_value=10.0, value=0.1)
     
-    product = st.slider('Number of Products', min_value=0, max_value=5, value=1)
+    product = st.slider('NumOfProducts', min_value=0, max_value=5, value=1)
     
-    crcard = st.checkbox('Credit Card')
+    crcard = st.checkbox('HasCrCard')
     if crcard:
         st.write('You have a credit card')
     else:
         st.write('You do not have a credit card')
         
-    active = st.checkbox('Active member')
+    active = st.checkbox('IsActiveMember')
     if active:
         st.write('You have an active membership')
     else:
         st.write('You do not have an active membership')
         
-    salary = st.slider('Your estimated salary', min_value=0.00, max_value=None, value=0.01)
+    salary = st.slider('EstimatedSalary', min_value=0.00, max_value=None, value=0.01)
 
     if st.button('Make Prediction'):
         features = [credit_score,geography,gender,age,tenure,
