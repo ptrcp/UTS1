@@ -5,7 +5,7 @@ import joblib
 
 def main():
     # Load the model
-    model = joblib.load('OOPmodel.pkl')
+    model = joblib.load('modelUTS.pkl')
 
     # Collect input features
     features = collect_input_features()
