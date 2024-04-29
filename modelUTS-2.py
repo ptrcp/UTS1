@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import numpy as np
 
-pickle_in = open('OOPmodel.pkl', 'rb') 
+pickle_in = open('modelUTS.pkl', 'rb') 
 model = pickle.load(pickle_in)
 
 def main():
