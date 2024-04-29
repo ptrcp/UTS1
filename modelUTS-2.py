@@ -7,7 +7,7 @@ model = joblib.load('modelUTS.pkl')
 def main():
     st.title('Prediction Model of Churn and Not Churn')
 
-    credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value="min")
+    credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value=0)
     st.write('Your credit score number is ', credit_score)
     
     geography = st.selectbox('Geography', ("0:France", "1:Spain", "2:Germany"),
