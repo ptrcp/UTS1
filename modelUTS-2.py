@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import numpy as np
 
-model = pickle.load('OOPmodel.pkl')
+model = joblib.load('OOPmodel.pkl')
 
 def main():
     st.title('Prediction Model of Churn and Not Churn')
