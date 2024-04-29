@@ -10,7 +10,7 @@ def main():
     credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value=0)
     st.write('Your credit score number is ', credit_score)
     
-    geography = st.selectbox('Geography', ("France", "Spain", "Germany"), placeholder="Select geography area...")
+    geography = st.selectbox('Geography', ["France", "Spain", "Germany"])
     st.write('Your area:', geography)
     
     gender = st.radio('Gender', ["***Female***", "***Male***"])
