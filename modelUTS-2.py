@@ -14,12 +14,12 @@ def main():
     st.write('Your area:', geography)
     
     gender = st.radio('Gender', ["Female", "Male"])
-    if gender == '***Female***':
+    if gender == 'Female':
         st.write('You are a female')
     else:
         st.write('You are a male')
     
-    age = st.number_input('Age', value=None)
+    age = st.number_input('Age')
     st.write('You are', age, 'years old')
 
     tenure = st.slider('Tenure', min_value=0, max_value=10, value=1)
