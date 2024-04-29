@@ -16,10 +16,10 @@ def main():
     st.write('Your area:', geography)
     
     gender = st.radio("Your gender", ["***Female***", "***Male***"])
-    if
-    gender == '***Female***': st.write('You are a female')
-    else
-    st.write('You are a male')
+    if:
+        gender == '***Female***': st.write('You are a female')
+    else:
+        st.write('You are a male')
     
     age = st.number_input("Your age", value=None, placeholder="Your current age...")
     st.write('You are', age, 'years old')
