@@ -137,8 +137,8 @@ def main():
             st.subheader('Loyal customer')
 
 def make_prediction(features):
-    features = features.fillna(0)
     input_array = np.array(features).reshape(1, -1)
+    input_array = np.nan_to_num(input_array)
     prediction = model.predict(input_array)
     return prediction[0]
 
