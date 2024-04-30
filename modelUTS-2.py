@@ -139,6 +139,10 @@ def main():
 def make_prediction(features):
     input_array = np.array(features).reshape(1, -1)
     input_array = np.nan_to_num(input_array)
+    
+    if input_array.shape[1] != model.n_features_:
+        raise ValueError(f"The model expects {model.n_features_} features, but {input_array.shape[1]} were provided.")
+        
     prediction = model.predict(input_array)
     return prediction[0]
 
