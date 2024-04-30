@@ -126,7 +126,7 @@ def main():
     
     #salary = st.slider('EstimatedSalary', min_value=0.00, max_value=None, value=0.01)
 
-    if st.button('Make Prediction'):
+    if st.button('Create Prediction'):
         features = [credit_score,geography,gender,age,tenure,
                    balance,product,crcard,active,salary]
         result = make_prediction(features)
@@ -137,6 +137,7 @@ def main():
             st.subheader('Loyal customer')
 
 def make_prediction(features):
+    features = features.fillna(0)
     input_array = np.array(features).reshape(1, -1)
     prediction = model.predict(input_array)
     return prediction[0]
