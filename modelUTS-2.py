@@ -5,7 +5,7 @@ import numpy as np
 model = joblib.load('modelUTS.pkl')
 
 def main():
-    st.title('Prediction Model of Churn and Not Churn')
+    st.title(':red[Customer Churn Prediction]')
 
     credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value=0)
     st.write('Your credit score number is ', credit_score)
