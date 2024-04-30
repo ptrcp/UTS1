@@ -7,8 +7,14 @@ model = joblib.load('modelUTS.pkl')
 def main():
     st.title(':red[Customer Churn Prediction]')
 
-    credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value=0)
-    st.write('Your credit score number is ', credit_score)
+    # INPUT 1
+    st.text("")
+    st.subheader('Customer Credit Score')
+    credit_score = st.number_input('Input the value below', min_value=300.0,
+                                   max_value=850.0, value=300.0)
+    st.write('*Answer:* ', credit_score)
+    #credit_score = st.number_input('CreditScore', min_value=0, max_value=1000, value=0)
+    #st.write('Your credit score number is ', credit_score)
     
     geography = st.selectbox('Geography', ["France", "Spain", "Germany"])
     st.write('Your area:', geography)
